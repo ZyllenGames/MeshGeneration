@@ -92,4 +92,13 @@ public class MeshGenerator : MonoBehaviour
     {
         GetComponent<MeshCollider>().sharedMesh = m_Mesh;
     }
+
+    private void OnDrawGizmos()
+    {
+        for (int i = 0; i < m_Vertices.Length; i++)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawSphere(m_Vertices[i], 0.05f);
+        }
+    }
 }
